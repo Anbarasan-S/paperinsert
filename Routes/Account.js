@@ -7,7 +7,10 @@ const jwt=require('jsonwebtoken');
 
 route.post('/signup',async(req,res)=>{
         const{email,password,username}=req.body;
-        console.log(email,password,username);
+        if(!email||!password||!username)
+        {
+            return res.status(400).json({msg:"Required fields are missing"});
+        }
         try
         {
             let user=await User.findOne({email});

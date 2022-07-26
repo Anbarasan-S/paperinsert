@@ -9,14 +9,6 @@ router.post('/create',auth,async(req,res)=>{
     try
     {
         const {area,district,size,designing,printed_material,quantity,inspection,date_of_display}=req.body;
-        console.log( area,
-            district,
-            size,
-            designing,
-            printed_material,
-            quantity,
-            inspection,
-            date_of_display,)
         if(!area||!district||!size||!designing||!printed_material||!quantity||!inspection||!date_of_display)
         {
             return res.status(400).json({msg:"Required fields are missing!!"});
