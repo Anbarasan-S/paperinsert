@@ -4,13 +4,14 @@ require('dotenv').config();
 const con=require('./config/db');
 const account=require('./Routes/Account');
 const blog=require('./Routes/Blog');
+const form=require('./Routes/Form');
 
 app.use(require('cors')());
 app.use(express.json());
 
 app.use('/api/paperinsert/account',account);
 app.use('/api/blog',blog);
-
+app.use('/api/paperinsert/form',form);
 
 const PORT=process.env.PORT;
 
