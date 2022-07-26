@@ -191,7 +191,7 @@ route.post('/login',async(req,res)=>{
             return res.status(400).json({msg:"Required fields are missing!!"});
         }
     
-        const user=await User.findOne({username});
+        const user=await User.findOne({username:username})||await User.findOne({email:username});
     
         if(!user)
         {
